@@ -12,6 +12,10 @@ function onSubmitCreatePromises(evt) {
   const delayStep = Number(step.value);
   const amountNum = Number(amount.value);
 
+  if (firstDelay < 0 || delayStep < 0 || amountNum < 0) {
+    return alert('Fields must be positive');
+  }
+
   promisesCounter(amountNum, firstDelay, delayStep);
 }
 
